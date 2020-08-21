@@ -1,248 +1,142 @@
+body, html {
+	overflow-x: hidden;
+	background-color: rgb(238, 238, 238);
+}
 * {
-	box-sizing: border-box;
-}
-
-body {
-	background: #f6f5f7;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	height: 100vh;
-	margin: -20px 0 50px;
-}
-
-h1 {
-	font-weight: bold;
 	margin: 0;
-}
-
-h2 {
-	text-align: center;
-}
-
-p {
-	font-size: 14px;
-	font-weight: 100;
-	line-height: 20px;
-	letter-spacing: 0.5px;
-	margin: 20px 0 30px;
-}
-
-span {
-	font-size: 12px;
-}
-
-a {
-	color: #333;
-	font-size: 14px;
-	text-decoration: none;
-	margin: 15px 0;
-}
-
-button {
-	border-radius: 20px;
-	border: 1px solid #FF4B2B;
-	background-color: #FF4B2B;
-	color: #FFFFFF;
-	font-size: 12px;
-	font-weight: bold;
-	padding: 12px 45px;
-	letter-spacing: 1px;
-	text-transform: uppercase;
-	transition: transform 80ms ease-in;
-}
-
-button:active {
-	transform: scale(0.95);
-}
-
-button:focus {
-	outline: none;
-}
-
-button.ghost {
-	background-color: transparent;
-	border-color: #FFFFFF;
-}
-
-form {
-	background-color: #FFFFFF;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-	padding: 0 50px;
-	height: 100%;
-	text-align: center;
-}
-
-input {
-	background-color: #eee;
-	border: none;
-	padding: 12px 15px;
-	margin: 8px 0;
-	width: 100%;
+	padding: 0;
 }
 
 .container {
+	/* margin: 1rem 0; */
+	padding: 1rem;
 	background-color: #fff;
-	border-radius: 10px;
-  	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
-			0 10px 10px rgba(0,0,0,0.22);
-	position: relative;
-	overflow: hidden;
-	width: 768px;
-	max-width: 100%;
-	min-height: 480px;
 }
 
-.form-container {
+.form-container form h1 {
+	margin: 0.5rem 0 1rem 0;
+	text-align: center;
+}
+.form-container form p:nth-child(2) {
+	text-align: center;
+}
+.form-container form .form-paragraph {
+	color: #8492a6;
+}
+.form-container form a{
+	display: inline-block;
+	text-decoration: none;
+	color: #306eff;
+}
+.form-container form .form-question {
+	margin: 2rem 0 2rem 0;
+}
+.form-container form .form-button {
+	margin-top: 1.5rem;
+	background-color: #306eff;
+	color: #fff;
+	font-size: 1rem;
+	border-radius: 20px;
+	outline: none;
+	border: none;
+	cursor: pointer;
+}
+.form-container form .sign-in-button {
+	float: right;
+	width: 100px;
+	padding: .5rem 1.25rem;
+}
+.form-container form .sign-up-button {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 32vw;
+	max-width: 190px;
+	padding: 0.75rem 1.25rem;
+}
+
+.input-area {
+	position: relative;
+	margin-top: 2rem;
+}
+.input-area span {
 	position: absolute;
-	top: 0;
-	height: 100%;
-	transition: all 0.6s ease-in-out;
+	top: 6px;
+	left: 0.5rem;
+	display: block;
+	color: #7c838d;
+	pointer-events: none;
+	transition: all 0.3s;
+	font-size: 16px;
+	line-height: 1.5;
+}
+.input-area input {
+	padding: 5px .5rem;
+	/* width: calc(100% - 17px); */
+	width: 100%;
+	border-radius: 4px;
+	outline: none;
+	border: none;
+	font-size: 16px;
+	line-height: 1.5;
+	border: 1px solid #e0e6ed;
+	background-color: rgb(241, 241, 241);
+}
+.input-area input:focus ~ span,
+.input-area input:valid ~ span {
+	transform: translateY(-2rem) scale(0.9, 0.9) translateX(-5px);
+	color: #306eff;
+	transition: all 0.3s;
+}
+.input-area input:focus {
+	border-color: #306eff;
+}
+.form-container form .form-footer {
+	margin-top: 0.5rem;
+	border-top: 1px solid #d7d8da;
+	padding-top: 1rem;
+}
+.sign-up-container form .form-footer {
+	margin-top: 1.75rem;
+}
+.form-footer .footer-btn {
+	border: none;
+	background-color: inherit;
+	outline: none;
+	color: #306eff;
+}
+
+
+/*	if register is shown	*/
+.container {
+	height: 412px;
 }
 
 .sign-in-container {
-	left: 0;
-	width: 50%;
-	z-index: 2;
+	position: relative;
+	opacity: 1;
+	height: auto;
+	transition: transform 2s;
 }
-
-.container.right-panel-active .sign-in-container {
-	transform: translateX(100%);
+.container.container-active .sign-in-container {
+	transform: translateX(-100vw);
+	height: 0;
 }
 
 .sign-up-container {
-	left: 0;
-	width: 50%;
-	opacity: 0;
-	z-index: 1;
-}
-
-.container.right-panel-active .sign-up-container {
-	transform: translateX(100%);
 	opacity: 1;
-	z-index: 5;
-	animation: show 0.6s;
-}
-
-@keyframes show {
-	0%, 49.99% {
-		opacity: 0;
-		z-index: 1;
-	}
-	
-	50%, 100% {
-		opacity: 1;
-		z-index: 5;
-	}
-}
-
-.overlay-container {
-	position: absolute;
-	top: 0;
-	left: 50%;
-	width: 50%;
-	height: 100%;
-	overflow: hidden;
-	transition: transform 0.6s ease-in-out;
-	z-index: 100;
-}
-
-.container.right-panel-active .overlay-container{
-	transform: translateX(-100%);
-}
-
-.overlay {
-	background: #FF416C;
-	background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
-	background: linear-gradient(to right, #FF4B2B, #FF416C);
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: 0 0;
-	color: #FFFFFF;
+	height: 0;
+	transform: translateX(100vw);
 	position: relative;
-	left: -100%;
-	height: 100%;
-	width: 200%;
-  	transform: translateX(0);
-	transition: transform 0.6s ease-in-out;
+	/* top: 2rem; */
+	/* width: calc(100% - 33px); */
+	transition: all 2s;
 }
-
-.container.right-panel-active .overlay {
-  	transform: translateX(50%);
-}
-
-.overlay-panel {
-	position: absolute;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-	padding: 0 40px;
-	text-align: center;
-	top: 0;
-	height: 100%;
-	width: 50%;
+.container.container-active .sign-up-container {
 	transform: translateX(0);
-	transition: transform 0.6s ease-in-out;
+	height: auto;
+	/* margin-left: -100vw; */
 }
 
-.overlay-left {
-	transform: translateX(-20%);
-}
 
-.container.right-panel-active .overlay-left {
-	transform: translateX(0);
-}
 
-.overlay-right {
-	right: 0;
-	transform: translateX(0);
-}
-
-.container.right-panel-active .overlay-right {
-	transform: translateX(20%);
-}
-
-.social-container {
-	margin: 20px 0;
-}
-
-.social-container a {
-	border: 1px solid #DDDDDD;
-	border-radius: 50%;
-	display: inline-flex;
-	justify-content: center;
-	align-items: center;
-	margin: 0 5px;
-	height: 40px;
-	width: 40px;
-}
-
-footer {
-    background-color: #222;
-    color: #fff;
-    font-size: 14px;
-    bottom: 0;
-    position: fixed;
-    left: 0;
-    right: 0;
-    text-align: center;
-    z-index: 999;
-}
-
-footer p {
-    margin: 10px 0;
-}
-
-footer i {
-    color: red;
-}
-
-footer a {
-    color: #3c97bf;
-    text-decoration: none;
-}
