@@ -5,12 +5,13 @@
 include 'include/autoloader.php';
 
 $isOk = true;
-$formHandle = new formHandle();
+$registerForm = new registerForm();
+$signInForm = new signInForm();
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     if ($_POST['submit'] == 'sign_up') {
-        $isOk = $formHandle->registerCheck();
+        $isOk = $registerForm->registerCheck();
     } else if ($_POST['submit'] == 'sign_in') {
-        $formHandle->signInCheck();
+        $signInForm->signInCheck();
     }
 }
 
@@ -34,14 +35,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                     <h1>Login</h1>
                     <p class="form-paragraph">Sign in to your account to continue.</p>
                     <div class="input-area">
-                        <input type="text" name="email" class="<?= empty($formHandle->errors_sign['email']) ? '' : 'error-input' ?>" value="<?= $formHandle->getEmail(); ?>" />
+                        <input type="text" name="email" class="<?= empty($signInForm->errors_sign['email']) ? '' : 'error-input' ?>" value="<?= $signInForm->getEmail(); ?>" />
                         <span class="floating-labels">Email address</span>
-                        <span class="error-span"><?php echo $formHandle->errors_sign['email']; ?></span>
+                        <span class="error-span"><?php echo $signInForm->errors_sign['email']; ?></span>
                     </div>
                     <div class="input-area">
-                        <input type="password" name="password_sign" class="<?= empty($formHandle->errors_sign['password']) ? '' : 'error-input' ?>" />
+                        <input type="password" name="password" class="<?= empty($signInForm->errors_sign['password']) ? '' : 'error-input' ?>" />
                         <span class="floating-labels">Password</span>
-                        <span class="error-span"><?php echo $formHandle->errors_sign['password']; ?></span>
+                        <span class="error-span"><?php echo $signInForm->errors_sign['password']; ?></span>
                     </div>
                     <div class="button-container">
                         <a class="form-question" href="">Forgot your password?</a>
@@ -65,19 +66,24 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                     <h1>Register</h1>
                     <p class="form-paragraph">Create account to continue.</p>
                     <div class="input-area">
-                        <input type="text" name="fname" class="<?= empty($formHandle->errors_register['fname']) ? '' : 'error-input' ?>" value="<?php echo $formHandle->getFname(); ?>" />
+                        <input type="text" name="fname" class="<?= empty($registerForm->errors_register['fname']) ? '' : 'error-input' ?>" value="<?php echo $registerForm->getFname(); ?>" />
                         <span class="floating-labels">First name</span>
-                        <span class="error-span"><?php echo $formHandle->errors_register['fname']; ?></span>
+                        <span class="error-span"><?php echo $registerForm->errors_register['fname']; ?></span>
                     </div>
                     <div class="input-area">
-                        <input type="text" name="lname" class="<?= empty($formHandle->errors_register['lname']) ? '' : 'error-input' ?>" value="<?= $formHandle->getLname(); ?>" />
+                        <input type="text" name="lname" class="<?= empty($registerForm->errors_register['lname']) ? '' : 'error-input' ?>" value="<?= $registerForm->getLname(); ?>" />
                         <span class="floating-labels">Last name</span>
-                        <span class="error-span"><?php echo $formHandle->errors_register['lname']; ?></span>
+                        <span class="error-span"><?php echo $registerForm->errors_register['lname']; ?></span>
                     </div>
                     <div class="input-area">
-                        <input type="password" name="password_register" class="<?= empty($formHandle->errors_register['password']) ? '' : 'error-input' ?>" />
+                        <input type="text" name="email" class="<?= empty($registerForm->errors_register['email']) ? '' : 'error-input' ?>" value="<?= $registerForm->getEmail(); ?>" />
+                        <span class="floating-labels">Email address</span>
+                        <span class="error-span"><?php echo $registerForm->errors_register['email']; ?></span>
+                    </div>
+                    <div class="input-area">
+                        <input type="password" name="password" class="<?= empty($registerForm->errors_register['password']) ? '' : 'error-input' ?>" />
                         <span class="floating-labels">Password</span>
-                        <span class="error-span"><?php echo $formHandle->errors_register['password']; ?></span>
+                        <span class="error-span"><?php echo $registerForm->errors_register['password']; ?></span>
                     </div>
                     <div class="button-container">
                         <button class="form-button sign-up-button" type="submit" name="submit" value="sign_up">Sign Up</button>
