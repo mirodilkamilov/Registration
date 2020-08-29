@@ -67,7 +67,7 @@ body, html {
 	margin-top: 2rem;
 }
 
-.input-area span {
+.input-area .floating-labels {
 	position: absolute;
 	top: 6px;
 	left: 0.5rem;
@@ -89,15 +89,25 @@ body, html {
 	border: 1px solid #e0e6ed;
 	background-color: rgb(241, 241, 241);
 }
-.input-area input:focus ~ span,
-.input-area input:valid ~ span {
-	transform: translateY(-2rem) scale(0.9, 0.9) translateX(-5px);
+.input-area input:focus ~ .floating-labels,
+.input-area input:valid ~ .floating-labels {
+	transform: translateY(-2rem) scale(0.9, 0.9) translateX(-3px);	/*	changed here	*/
 	color: #306eff;
 	transition: all 0.3s;
 }
 .form-container form .input-area input:focus {
 	border-color: #306eff;
 }
+.form-container form .input-area .error-span{
+	display: block;
+	color: red;
+	margin: .25rem 0.5rem;
+}
+.form-container form .input-area .error-input{
+	border-color: red;
+}
+
+
 .form-container form .button-container {
 	margin: 1.5rem 0;
 	display: flex;
