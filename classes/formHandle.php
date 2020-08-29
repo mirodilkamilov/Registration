@@ -8,24 +8,20 @@ class formHandle
 
     public function registerCheck()
     {
-        $fname = $this->securityCheck($_POST['fname']);
-        $lname = $this->securityCheck($_POST['lname']);
+        $this->fname = $this->securityCheck($_POST['fname']);
+        $this->lname = $this->securityCheck($_POST['lname']);
         $password_register = $this->securityCheck($_POST['password_register']);
 
-        if (empty($fname)) {
+        if (empty($this->fname)) {
             $this->errors_register['fname'] = 'First name is required';
             $this->isOk = false;
-        } else {
-            $this->fname = $fname;
         }
-        if (empty($lname)) {
+        if (empty($this->lname)) {
             $this->errors_register['lname'] = 'Last name is required';
             $this->isOk = false;
-        } else {
-            $this->lname = $lname;
         }
 
-        $this->errors_register['password'] = $this->passwordCheck($password_register);
+        $this->errors_register['password'] = $this->passwordValidate($password_register);
 
         if ($this->isOk) {
             header('Location: /');
@@ -35,22 +31,17 @@ class formHandle
 
     public function signInCheck()
     {
-        $email = $this->securityCheck($_POST['email']);
+        $this->email = $this->securityCheck($_POST['email']);
         $password_sign = $this->securityCheck($_POST['password_sign']);
 
-        if (empty($email)) {
-            $this->errors_sign['email'] = 'Email is required';
-            $this->isOk = false;
-        } else {
-            $this->email = $email;
-        }
+        $this->errors_sign['email'] = $this->emailValidate($this->email);
 
-        $this->errors_sign['password'] = $this->passwordCheck($password_sign);
+        $this->errors_sign['password'] = $this->passwordValidate($password_sign);
 
         if ($this->isOk) {
             header('Location: /');
         }
-        return $this->isOk;
+        //return $this->isOk;
     }
 
     private function securityCheck($userInput)
@@ -58,7 +49,7 @@ class formHandle
         return htmlspecialchars(trim($userInput));
     }
 
-    private function passwordCheck($password)
+    private function passwordValidate($password)
     {
         $errorMassage = '';
         if (empty($password)) {
@@ -71,6 +62,21 @@ class formHandle
 
         return $errorMassage;
     }
+
+    private function emailValidate($email)
+    {
+        $errorMassage = '';
+        if (empty($email)) {
+            $errorMassage = 'Email is required';
+            $this->isOk = false;
+        } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $errorMassage = 'Invalid email';
+            $this->isOk = false;
+        }
+
+        return $errorMassage;
+    }
+
     public function getFname()
     {
         return $this->fname;
