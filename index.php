@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     if ($_POST['submit'] == 'sign_up') {
         $isOk = $registerForm->registerCheck();
     } else if ($_POST['submit'] == 'sign_in') {
-        $signInForm->signInCheck();
+        $signInForm->signInValidate();
     }
 }
 
@@ -43,6 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                         <input type="password" name="password" class="<?= empty($signInForm->errors_sign['password']) ? '' : 'error-input' ?>" />
                         <span class="floating-labels">Password</span>
                         <span class="error-span"><?php echo $signInForm->errors_sign['password']; ?></span>
+                        <span class="error-span"><?php echo $signInForm->errors_sign['signIn']; ?></span>
                     </div>
                     <div class="button-container">
                         <a class="form-question" href="">Forgot your password?</a>

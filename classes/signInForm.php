@@ -4,9 +4,9 @@ class signInForm extends Controller
 {
     private $isOk = true;
     private $email, $password;
-    public $errors_sign = array('email' => '', 'password' => '');
+    public $errors_sign = array('email' => '', 'password' => '', 'signIn' => '');
 
-    public function signInCheck()
+    public function signInValidate()
     {
         $this->email = $this->securityCheck($_POST['email']);
         $password = $this->securityCheck($_POST['password']);
@@ -18,7 +18,12 @@ class signInForm extends Controller
         $this->isOk = empty($this->errors_sign['password']) ?  $this->isOk : false;
 
         if ($this->isOk) {
-            header('Location: /');
+            $isSignedIn = $this->signInCheck($this->email, $password);
+            if ($isSignedIn) {
+                header('Location: test.php');
+            } else {
+                $this->errors_sign['signIn'] = 'The email or password is incorrect';
+            }
         }
         //return $this->isOk;
     }

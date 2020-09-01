@@ -34,14 +34,25 @@ class registerForm extends Controller
         $this->errors_register['email'] = $this->emailValidate($this->email);
         $this->isOk = empty($this->errors_register['email']) ? $this->isOk : false;
 
+        //Check whether email already exist
+        $emailExist = $this->emailExist($this->email);
+        if ($emailExist) {
+            $this->isOk = false;
+            $this->errors_register['email'] = 'Email already exist';
+        }
+
+
         $this->errors_register['password'] = $this->passwordValidate($password_register);
         $this->isOk = empty($this->errors_register['password']) ? $this->isOk : false;
 
         if ($this->isOk) {
-            header('Location: /');
+            $newRecord = array('fname' => $this->fname, 'lname' => $this->lname, 'email' => $this->email, 'password' => $password_register);
+            $this->newUser($newRecord);
+            header('Location: test.php');
         }
         return $this->isOk;
     }
+
 
     public function getFname()
     {

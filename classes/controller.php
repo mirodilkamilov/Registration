@@ -1,6 +1,29 @@
 <?php
-class Controller
+class Controller extends Model
 {
+    protected function newUser($newRecord)
+    {
+        $this->setUser($newRecord);
+    }
+
+
+
+
+    //  Form handling
+    protected function emailExist($email)
+    {
+        $result = $this->getUserByEmail($email);
+        $emailExist = empty($result) ? false : true;
+        return $emailExist;
+    }
+    protected function signInCheck($email, $password)
+    {
+        $result = $this->getUserSignIn($email, $password);
+        $isSignedIn = empty($result) ? false : true;
+        return $isSignedIn;
+    }
+
+
     protected function securityCheck($userInput)
     {
         return htmlspecialchars(trim($userInput));
