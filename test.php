@@ -5,12 +5,18 @@ include 'include/autoloader.php';
 $view = new View();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['search'] == 'search') {
-    $email = htmlspecialchars(trim($_POST['emailSearch']));
-    $email = str_replace('%', '[%]', $email);
-    $email = '%' . $email . '%';
-    $results = $view->searchByEmail($email);
+    $searchInput = prepareForSearching($_POST['emailSearch']);
+    $results = $view->searchByEmail($searchInput);
 } else {
     $results = $view->showAllUsers();
+}
+
+function prepareForSearching($searchInput)
+{
+    $searchInput = htmlspecialchars(trim($searchInput));
+    $searchInput = str_replace('%', '[%]', $searchInput);
+    $searchInput = '%' . $searchInput . '%';
+    return $searchInput;
 }
 
 ?>
@@ -34,6 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['search'] == 'search') {
         <form action="test.php" method="post">
             <input type="text" placeholder="Search by email" name="emailSearch">
             <button class="search-button" type=" submit" name="search" value="search">Search</button>
+            <a class="reset-link" href="">Show all users</a>
         </form>
     </div>
     <table class="table table-hover table-bordered text-center">

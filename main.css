@@ -250,23 +250,31 @@ body, html {
 	border: 1px solid #343a40;
 	border-radius: 1rem;
 	outline: none;
-	margin-right: 1.5rem;
 	transition: border-color .2s ease-in-out,box-shadow .2s ease-in-out
 }
 .search-box form input:focus{
 	border-color: #1b5efa;
 }
 
-.search-box form .search-button{
+.search-box form .search-button, 
+.search-box form .reset-link {
 	display: block;
 	padding: .375rem .75rem;
 	border: none;
 	border: 1px solid #343a40;
+	color: #343a40;
 	border-radius: 1rem;
-	background-color: #f3f5f8;
+	background-color: #eff1ee;
 	outline: none;
+	text-decoration: none;
+	margin-left: 1.5rem;
 }
-.search-box form .search-button:focus{
+.search-box form .search-button{
+	background-color: #1b5efa;
+	color: #fff;
+	border: 1px solid #1b5efa;
+}
+.search-box form .reset-link:focus{
 	border-color: #1b5efa;
 	color: #1b5efa;
 }
