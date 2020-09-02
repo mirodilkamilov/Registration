@@ -48,6 +48,7 @@ class registerForm extends Controller
         if ($this->isOk) {
             $newRecord = array('fname' => $this->fname, 'lname' => $this->lname, 'email' => $this->email, 'password' => $password_register);
             $this->newUser($newRecord);
+
             header('Location: test.php');
         }
         return $this->isOk;

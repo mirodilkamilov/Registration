@@ -35,4 +35,16 @@ class Model extends Connection
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$newRecord['fname'], $newRecord['lname'], $newRecord['email'], $newRecord['password']]);
     }
+
+    // *    Searching with LIKE
+
+    protected function getByEmail($email)
+    {
+        $sql = "SELECT * FROM user WHERE email LIKE ?";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$email]);
+
+        $results = $stmt->fetchAll();
+        return $results;
+    }
 }

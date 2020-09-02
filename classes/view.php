@@ -11,4 +11,10 @@ class View extends Model
         $results = $this->getUserByEmail($email);
         return $results;
     }
+
+    //  *   tets.php searching
+    public function searchByEmail($email)
+    {
+        return $this->getByEmail($email);
+    }
 }

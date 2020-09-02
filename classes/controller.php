@@ -7,8 +7,6 @@ class Controller extends Model
     }
 
 
-
-
     //  Form handling
     protected function emailExist($email)
     {

@@ -109,6 +109,12 @@ body, html {
 	color: red;
 	margin: .25rem 0.5rem;
 }
+.form-container form>.error-span{
+	display: block;
+	color: red;
+	margin: .25rem 0.5rem;
+	text-align: center;
+}
 .form-container form .input-area .error-input{
 	border-color: red;
 }
@@ -214,4 +220,45 @@ body, html {
 	.container .box .form-container{
 		width: 100%;
 	}
+}
+
+
+
+
+
+
+
+
+/* *			Test php 			*/
+
+.search-box{
+	margin: 1.5rem;
+}
+.search-box form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+.search-box form input{
+	width: 50%;
+	color: #495057;
+	font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+	padding: .375rem .75rem;
+	border: 1px solid #306eff;
+	border-radius: 1rem;
+	outline: none;
+	margin-right: 1.5rem;
+}
+
+.search-box form .search-button{
+	display: block;
+	padding: .375rem .75rem;
+	border: none;
+	border: 1px solid #306eff;
+	border-radius: 1rem;
+	background-color: #f3f5f8;
+	outline: none;
 }

@@ -34,6 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 <form action="index.php" method="post">
                     <h1>Login</h1>
                     <p class="form-paragraph">Sign in to your account to continue.</p>
+                    <span class="error-span"><?php echo $signInForm->errors_sign['signIn']; ?></span>
                     <div class="input-area">
                         <input type="text" name="email" class="<?= empty($signInForm->errors_sign['email']) ? '' : 'error-input' ?>" value="<?= $signInForm->getEmail(); ?>" />
                         <span class="floating-labels">Email address</span>
@@ -43,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                         <input type="password" name="password" class="<?= empty($signInForm->errors_sign['password']) ? '' : 'error-input' ?>" />
                         <span class="floating-labels">Password</span>
                         <span class="error-span"><?php echo $signInForm->errors_sign['password']; ?></span>
-                        <span class="error-span"><?php echo $signInForm->errors_sign['signIn']; ?></span>
+                        <!-- <span class="error-span"><?php echo $signInForm->errors_sign['signIn']; ?></span> -->
                     </div>
                     <div class="button-container">
                         <a class="form-question" href="">Forgot your password?</a>
