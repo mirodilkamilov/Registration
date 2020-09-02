@@ -247,18 +247,26 @@ body, html {
     font-weight: 400;
     line-height: 1.5;
 	padding: .375rem .75rem;
-	border: 1px solid #306eff;
+	border: 1px solid #343a40;
 	border-radius: 1rem;
 	outline: none;
 	margin-right: 1.5rem;
+	transition: border-color .2s ease-in-out,box-shadow .2s ease-in-out
+}
+.search-box form input:focus{
+	border-color: #1b5efa;
 }
 
 .search-box form .search-button{
 	display: block;
 	padding: .375rem .75rem;
 	border: none;
-	border: 1px solid #306eff;
+	border: 1px solid #343a40;
 	border-radius: 1rem;
 	background-color: #f3f5f8;
 	outline: none;
+}
+.search-box form .search-button:focus{
+	border-color: #1b5efa;
+	color: #1b5efa;
 }
