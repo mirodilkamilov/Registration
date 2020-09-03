@@ -7,6 +7,16 @@ class Controller extends Model
     }
 
 
+
+    // *    Searching
+    public function prepareForSearching($searchInput)
+    {
+        $searchInput = htmlspecialchars(trim($searchInput));
+        $searchInput = str_replace('%', '[%]', $searchInput);
+        $searchInput = '%' . $searchInput . '%';
+        return $searchInput;
+    }
+
     //  Form handling
     protected function emailExist($email)
     {

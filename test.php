@@ -3,20 +3,13 @@
 include 'include/autoloader.php';
 
 $view = new View();
+$controller = new Controller();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['search'] == 'search') {
-    $searchInput = prepareForSearching($_POST['emailSearch']);
+    $searchInput = $controller->prepareForSearching($_POST['emailSearch']);
     $results = $view->searchByEmail($searchInput);
 } else {
     $results = $view->showAllUsers();
-}
-
-function prepareForSearching($searchInput)
-{
-    $searchInput = htmlspecialchars(trim($searchInput));
-    $searchInput = str_replace('%', '[%]', $searchInput);
-    $searchInput = '%' . $searchInput . '%';
-    return $searchInput;
 }
 
 ?>
@@ -38,41 +31,60 @@ function prepareForSearching($searchInput)
 <body>
     <div class="search-box">
         <form action="test.php" method="post">
-            <input type="text" placeholder="Search by email" name="emailSearch">
+            <input type="text" placeholder="Search by email" name="emailSearch" onkeyup="showUser(this.value)">
             <button class="search-button" type=" submit" name="search" value="search">Search</button>
             <a class="reset-link" href="">Show all users</a>
         </form>
     </div>
-    <table class="table table-hover table-bordered text-center">
-        <thead class="thead-dark">
-            <tr>
-                <th scope="col">User Id</th>
-                <th scope="col">First Name</th>
-                <th scope="col">Last Name</th>
-                <th scope="col">Email</th>
-                <th scope="col">Password</th>
-                <th scope="col">Created At</th>
-            </tr>
-        </thead>
+    <div class="table-container" id="table-container">
+        <table class="table table-hover table-bordered text-center">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">User Id</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Password</th>
+                    <th scope="col">Created At</th>
+                </tr>
+            </thead>
 
-        <?php if (!empty($results)) :  ?>
-            <tbody>
-                <?php foreach ($results as $result) : ?>
-                    <tr>
-                        <th scope="row"><?= $result['userID']; ?></th>
-                        <td><?= $result['fname']; ?></td>
-                        <td><?= $result['lname']; ?></td>
-                        <td><?= $result['email']; ?></td>
-                        <td><?= $result['password']; ?></td>
-                        <td><?= $result['createdAt'] ?></td>
-                    </tr>
-                <?php endforeach ?>
-            </tbody>
-    </table>
-<?php else : ?>
-    </table>
-    <h3 class="text-center">No record</h3>
-<?php endif ?>
+            <?php if (!empty($results)) :  ?>
+                <tbody>
+                    <?php foreach ($results as $result) : ?>
+                        <tr>
+                            <th scope="row"><?= $result['userID']; ?></th>
+                            <td><?= $result['fname']; ?></td>
+                            <td><?= $result['lname']; ?></td>
+                            <td><?= $result['email']; ?></td>
+                            <td><?= $result['password']; ?></td>
+                            <td><?= $result['createdAt'] ?></td>
+                        </tr>
+                    <?php endforeach ?>
+                </tbody>
+        </table>
+    <?php else : ?>
+        </table>
+        <h3 class="text-center">No record</h3>
+    <?php endif ?>
+    </div>
+
+    <script>
+        function showUser(str) {
+            str = str.trim();
+            if (str.length > 0) {
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById("table-container").innerHTML = this.responseText;
+                    }
+                };
+                xmlhttp.open("POST", "searchHandle.php", true);
+                xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                xmlhttp.send("emailSearch=" + str);
+            }
+        }
+    </script>
 
 
 
