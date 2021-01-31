@@ -8,7 +8,7 @@ class Connection
     {
         $servername = "localhost";
         $username = "root";
-        $password = "";
+        $password = "root";
         $dbname = "registration";
         $this->pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
         $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

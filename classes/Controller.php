@@ -8,7 +8,7 @@ class Controller extends Model
 
 
 
-    // *    Searching
+    //* Searching
     public function prepareForSearching($searchInput)
     {
         $searchInput = htmlspecialchars(trim($searchInput));
