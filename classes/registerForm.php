@@ -34,11 +34,13 @@ class registerForm extends Controller
         $this->errors_register['email'] = $this->emailValidate($this->email);
         $this->isOk = empty($this->errors_register['email']) ? $this->isOk : false;
 
-        //Check whether email already exist
-        $emailExist = $this->emailExist($this->email);
-        if ($emailExist) {
-            $this->isOk = false;
-            $this->errors_register['email'] = 'Email already exist';
+        //* Check whether email already exist (checks only everything was OK so far)
+        if ($this->isOk) {
+            $emailExist = $this->emailExist($this->email);
+            if ($emailExist) {
+                $this->isOk = false;
+                $this->errors_register['email'] = 'Email already exist';
+            }
         }
 
 
