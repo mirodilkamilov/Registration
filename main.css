@@ -260,7 +260,6 @@ body, html {
 .search-box form .reset-link {
 	display: block;
 	padding: .375rem .75rem;
-	border: none;
 	border: 1px solid #343a40;
 	color: #343a40;
 	border-radius: 1rem;
@@ -277,4 +276,7 @@ body, html {
 .search-box form .reset-link:focus{
 	border-color: #1b5efa;
 	color: #1b5efa;
+}
+.search-box form .reset-link:first-child{
+	margin-right: 1rem;
 }

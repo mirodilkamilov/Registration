@@ -31,6 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['search'] == 'search') {
 <body>
     <div class="search-box">
         <form action="test.php" method="post">
+           <a href="/Registration" class="reset-link">Home</a>
             <input type="text" placeholder="Search by email" name="emailSearch" onkeyup="showUser(this.value)">
             <button class="search-button" type=" submit" name="search" value="search">Search</button>
             <a class="reset-link" href="">Show all users</a>
@@ -53,12 +54,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['search'] == 'search') {
                 <tbody>
                     <?php foreach ($results as $result) : ?>
                         <tr>
-                            <th scope="row"><?= $result['userID']; ?></th>
+                            <th scope="row"><?= $result['user_id']; ?></th>
                             <td><?= $result['fname']; ?></td>
                             <td><?= $result['lname']; ?></td>
                             <td><?= $result['email']; ?></td>
                             <td><?= $result['password']; ?></td>
-                            <td><?= $result['createdAt'] ?></td>
+                            <td><?= $result['created_at'] ?></td>
                         </tr>
                     <?php endforeach ?>
                 </tbody>
