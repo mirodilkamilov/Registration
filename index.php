@@ -31,9 +31,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
    <div class="container <?= $isOk ? '' : 'container-active' ?>" id="container">
       <div class="box sign-in-container">
          <div class="form-container">
-            <form action="index.php" method="post">
+            <form action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
                <h1>Login</h1>
-               <p class="form-paragraph">Sign in to your account to continue.</p>
+               <p class="form-paragraph centered">Sign in to your account to continue.</p>
                <span class="error-span"><?php echo $signInForm->errors_sign['signIn']; ?></span>
                <div class="input-area">
                   <input type="text" name="email" class="<?= empty($signInForm->errors_sign['email']) ? '' : 'error-input' ?>" value="<?= $signInForm->getEmail(); ?>" />
@@ -44,7 +44,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                   <input type="password" name="password" class="<?= empty($signInForm->errors_sign['password']) ? '' : 'error-input' ?>" />
                   <span class="floating-labels">Password</span>
                   <span class="error-span"><?php echo $signInForm->errors_sign['password']; ?></span>
-                  <!-- <span class="error-span"><?php echo $signInForm->errors_sign['signIn']; ?></span> -->
                </div>
                <div class="button-container">
                   <a class="form-question" href="">Forgot your password?</a>
@@ -69,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             <form action="index.php" method="post">
                <span class="warning">Please do NOT use your actual email</span>
                <h1>Register</h1>
-               <p class="form-paragraph">Create account to continue.</p>
+               <p class="form-paragraph centered">Create account to continue.</p>
                <div class="input-area">
                   <input type="text" name="fname" class="<?= empty($registerForm->errors_register['fname']) ? '' : 'error-input' ?>" value="<?php echo $registerForm->getFname(); ?>" />
                   <span class="floating-labels">First name</span>
