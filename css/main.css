@@ -225,66 +225,6 @@ html {
 	}
 }
 
-/* *			Test php 			*/
-
-.search-box {
-	margin: 1.5rem;
-}
-.search-box form {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
-}
-.search-box form input {
-	width: 50%;
-	color: #495057;
-	font-size: 1rem;
-	font-weight: 400;
-	line-height: 1.5;
-	padding: 0.375rem 0.75rem;
-	border: 1px solid #343a40;
-	border-radius: 1rem;
-	outline: none;
-	transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-}
-.search-box form input:focus {
-	border-color: #1b5efa;
-}
-
-.search-box form .search-button,
-.search-box form .reset-link {
-	display: block;
-	padding: 0.375rem 0.75rem;
-	border: 1px solid #343a40;
-	color: #343a40;
-	border-radius: 1rem;
-	background-color: #eff1ee;
-	outline: none;
-	text-decoration: none;
-	margin-left: 1.5rem;
-}
-.search-box form .search-button {
-	background-color: #1b5efa;
-	color: #fff;
-	border: 1px solid #1b5efa;
-}
-.search-box form .reset-link:focus {
-	border-color: #1b5efa;
-	color: #1b5efa;
-}
-.search-box form .reset-link:first-child {
-	margin-right: 1rem;
-}
-
-.form-container .warning {
-	display: block;
-	color: red;
-	font-size: 1.1rem;
-	text-align: center;
-	padding-bottom: 1rem;
-}
-
 @media (min-width: 1400px){
 	.container{
 		width: 900px;

@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css">
    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/v4-shims.css">
-   <link rel="stylesheet" href="main.css">
+   <link rel="stylesheet" href="css/main.css">
    <title>Registration</title>
    <link rel="shortcut icon" type="image/x-icon" href="images/heroku-logo.svg" />
 </head>
