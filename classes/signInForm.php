@@ -9,7 +9,7 @@ class signInForm extends Controller
     public function signInValidate()
     {
         $this->email = $this->securityCheck($_POST['email']);
-        $password = $this->securityCheck($_POST['password']);
+        $password = $_POST['password'];
 
         $this->errors_sign['email'] = $this->emailValidate($this->email);
         $this->isOk = empty($this->errors_sign['email']) ? true : false;
@@ -25,7 +25,6 @@ class signInForm extends Controller
                 $this->errors_sign['signIn'] = 'The email or password is incorrect';
             }
         }
-        //return $this->isOk;
     }
     public function getEmail()
     {

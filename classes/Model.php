@@ -19,15 +19,6 @@ class Model extends Connection
         $result = $stmt->fetch();
         return $result;
     }
-    protected function getUserSignIn($email, $password)
-    {
-        $sql = "SELECT * FROM user WHERE email = ? and password = ?";
-        $stmt = $this->connect()->prepare($sql);
-        $stmt->execute([$email, $password]);
-
-        $result = $stmt->fetch();
-        return $result;
-    }
 
     protected function setUser($newRecord)
     {

@@ -30,12 +30,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST['emailSearch'])) {
         <tbody>
             <?php foreach ($results as $result) : ?>
                 <tr>
-                    <th scope="row"><?= $result['userID']; ?></th>
+                    <th scope="row"><?= $result['user_id']; ?></th>
                     <td><?= $result['fname']; ?></td>
                     <td><?= $result['lname']; ?></td>
                     <td><?= $result['email']; ?></td>
                     <td><?= $result['password']; ?></td>
-                    <td><?= $result['createdAt'] ?></td>
+                    <td><?= $result['created_at'] ?></td>
                 </tr>
             <?php endforeach ?>
         </tbody>

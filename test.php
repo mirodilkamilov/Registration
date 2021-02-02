@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['search'] == 'search') {
         <form action="test.php" method="post">
            <a href="/Registration" class="reset-link">Home</a>
             <input type="text" placeholder="Search by email" name="emailSearch" onkeyup="showUser(this.value)">
-            <button class="search-button" type=" submit" name="search" value="search">Search</button>
+            <button class="search-button" type="submit" name="search" value="search">Search</button>
             <a class="reset-link" href="">Show all users</a>
         </form>
     </div>
