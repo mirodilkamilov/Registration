@@ -66,6 +66,7 @@ body, html {
 }
 .form-container form .form-paragraph{
 	color: #8492a6;
+	text-align: center;
 }
 .form-container form .input-area {
 	position: relative;
@@ -279,4 +280,12 @@ body, html {
 }
 .search-box form .reset-link:first-child{
 	margin-right: 1rem;
+}
+
+.form-container .warning{
+	display: block;
+	color: red;
+	font-size: 1.1rem;
+	text-align: center;
+	padding-bottom: 1rem;
 }

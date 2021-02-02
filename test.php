@@ -70,6 +70,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['search'] == 'search') {
     <?php endif ?>
     </div>
 
+    <div class="note" style="padding-left: 1rem;">
+        <p>*I shouldn't display these sensitive data, but it is just a simple registration where I am showing my ability to work with database</p>
+    </div>
+
     <script>
         function showUser(str) {
             str = str.trim();
