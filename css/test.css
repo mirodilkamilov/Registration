@@ -59,11 +59,3 @@ html {
 .search-box form .reset-link:first-child {
 	margin-right: 1rem;
 }
-
-.warning {
-	display: block;
-	color: red;
-	font-size: 1.1rem;
-	text-align: center;
-	padding-bottom: 1rem;
-}

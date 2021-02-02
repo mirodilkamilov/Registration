@@ -213,6 +213,14 @@ html {
 	left: -100%;
 }
 
+.form-container .warning {
+	display: block;
+	color: red;
+	font-size: 1.1rem;
+	text-align: center;
+	padding-bottom: 1rem;
+}
+
 @media (max-width: 992px) {
 	.container {
 		max-width: 100vw;
