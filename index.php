@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
    <div class="container <?= $isOk ? '' : 'container-active' ?>" id="container">
       <div class="box sign-in-container">
          <div class="form-container">
-            <form action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
+            <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
                <h1>Login</h1>
                <p class="form-paragraph centered">Sign in to your account to continue.</p>
                <span class="error-span"><?php echo $signInForm->errors_sign['signIn']; ?></span>
@@ -65,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             <img src="images/register.svg" alt="register">
          </div>
          <div class="form-container">
-            <form action="index.php" method="post">
+            <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
                <span class="warning">Please do NOT use your actual email</span>
                <h1>Register</h1>
                <p class="form-paragraph centered">Create account to continue.</p>

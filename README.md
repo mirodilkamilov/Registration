@@ -1,4 +1,4 @@
-# Simple Sign In/Up page using PHP
+<h1 align="center">Simple Sign In/Up page using PHP</h1>
 
 ### Quick overview about myself
 Hi:wave:
