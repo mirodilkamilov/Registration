@@ -23,7 +23,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css">
    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/v4-shims.css">
    <link rel="stylesheet" href="main.css">
-   <title>Document</title>
+   <title>Registration</title>
+   <link rel="shortcut icon" type="image/x-icon" href="images/heroku-logo.svg" />
 </head>
 
 <body>
