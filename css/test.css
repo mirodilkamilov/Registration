@@ -21,11 +21,6 @@ html {
     justify-content: space-between;
     align-items: center;
     height: 25vh;
-
-    /*display: flex;*/
-    /*justify-content: center;*/
-    /*align-items: center;*/
-    /*width: 100%;*/
 }
 
 .search-box .top-buttons {
@@ -73,7 +68,6 @@ html {
     background-color: #eff1ee;
     outline: none;
     text-decoration: none;
-    /*margin-left: 1.5rem;*/
 }
 
 .search-box form .search-button {
@@ -87,10 +81,6 @@ html {
     color: #1b5efa;
 }
 
-/*.search-box form .reset-link:first-child {*/
-/*    margin-right: 1rem;*/
-/*}*/
-
 .table .thead-dark th,
 .table tbody th,
 .table tbody td {
@@ -98,6 +88,10 @@ html {
 }
 
 @media (min-width: 768px) {
+    .search-box form {
+        max-height: 150px;
+    }
+
     .search-box .top-buttons {
         justify-content: center;
     }
