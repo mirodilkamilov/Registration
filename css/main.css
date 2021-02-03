@@ -232,9 +232,15 @@ html {
 		width: 100%;
 	}
 }
+@media (min-width: 993px) {
+	.container {
+		height: calc(100vh - 2rem);
+		margin: 0 auto;
+	}
+}
 
-@media (min-width: 1400px){
-	.container{
+@media (min-width: 1400px) {
+	.container {
 		width: 900px;
 		height: 700px;
 	}
