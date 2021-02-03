@@ -54,6 +54,7 @@ class registerForm extends Controller
          $newRecord = array('fname' => $this->fname, 'lname' => $this->lname, 'email' => $this->email, 'password' => $password_register_hash);
          $this->newUser($newRecord);
          $_SESSION['isAuth'] = true;
+         $_SESSION['fname'] = $this->fname;
          header('Location: dashboard.php');
       }
       return $this->isOk;

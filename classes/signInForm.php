@@ -21,6 +21,8 @@ class signInForm extends Controller
          $isSignedIn = $this->signInCheck($this->email, $password);
          if ($isSignedIn) {
             $_SESSION['isAuth'] = true;
+            $result = $this->getUserByEmail($this->email);
+            $_SESSION['fname'] = $result['fname'];
             header('Location: dashboard.php');
          } else {
             $this->errors_sign['signIn'] = 'The email or password is incorrect';

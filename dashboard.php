@@ -39,6 +39,7 @@ if (isset($_SESSION['isAuth']) && $_SESSION['isAuth'] == true) {
 
 <body>
 <div class="search-box">
+   <h3>Hi, <?= $_SESSION['fname'] ?> &#x1F44B</h3>
    <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
       <div class="top-buttons">
          <a href="/" class="reset-link">Home</a>
