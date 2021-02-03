@@ -53,7 +53,7 @@ class registerForm extends Controller
          $password_register_hash = password_hash($password_register, PASSWORD_BCRYPT, ["cost" => $cost]);
          $newRecord = array('fname' => $this->fname, 'lname' => $this->lname, 'email' => $this->email, 'password' => $password_register_hash);
          $this->newUser($newRecord);
-         header('Location: test.php');
+         header('Location: dashboard.php');
       }
       return $this->isOk;
    }

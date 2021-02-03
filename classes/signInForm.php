@@ -20,7 +20,7 @@ class signInForm extends Controller
         if ($this->isOk) {
             $isSignedIn = $this->signInCheck($this->email, $password);
             if ($isSignedIn) {
-                header('Location: test.php');
+                header('Location: dashboard.php');
             } else {
                 $this->errors_sign['signIn'] = 'The email or password is incorrect';
             }

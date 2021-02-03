@@ -30,7 +30,6 @@ html {
 }
 
 .search-box form input {
-    /*width: 50%;*/
     color: #495057;
     font-size: 1rem;
     font-weight: 400;
@@ -44,6 +43,10 @@ html {
 
 .search-box form input:focus {
     border-color: #1b5efa;
+}
+
+.search-box .top-buttons .duplicate {
+    display: none;
 }
 
 .search-box form .search-button,
@@ -88,9 +91,28 @@ html {
 }
 
 @media (min-width: 768px) {
-    .search-box form {
-        max-height: 150px;
+    .search-box {
+        margin: 1rem;
     }
+
+    .search-box form {
+        max-height: 100px;
+        justify-content: space-around;
+    }
+
+    .search-box form input {
+        width: 40%;
+        max-width: 550px;
+    }
+
+    .search-box form .reset-link {
+        display: none;
+    }
+
+    .search-box .top-buttons .reset-link {
+        display: block;
+    }
+
 
     .search-box .top-buttons {
         justify-content: center;

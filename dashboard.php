@@ -33,6 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['search'] == 'search') {
    <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
       <div class="top-buttons">
          <a href="/" class="reset-link">Home</a>
+         <a class="reset-link duplicate" href="">Show all users</a>
          <button class="reset-link" type="submit" name="logout" value="logout">Log out</button>
       </div>
       <input type="text" placeholder="Search by email" name="emailSearch" onkeyup="showUser(this.value)">
