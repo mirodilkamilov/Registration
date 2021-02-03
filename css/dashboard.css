@@ -1,4 +1,4 @@
-/** Test php */
+/** dashboard.php */
 body,
 html {
     overflow-x: hidden;
@@ -88,6 +88,10 @@ html {
 .table tbody th,
 .table tbody td {
     vertical-align: middle;
+}
+
+.note {
+    padding-left: 1rem;
 }
 
 @media (min-width: 768px) {

@@ -1,15 +1,24 @@
 <?php
-
+session_start();
 include 'include/autoloader.php';
 
 $view = new View();
 $controller = new Controller();
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['search'] == 'search') {
-   $searchInput = $controller->prepareForSearching($_POST['emailSearch']);
-   $results = $view->searchByEmail($searchInput);
+if (isset($_SESSION['isAuth']) && $_SESSION['isAuth'] == true) {
+   if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+      if (isset($_POST['search']) && $_POST['search'] == 'search') {
+         $searchInput = $controller->prepareForSearching($_POST['emailSearch']);
+         $results = $view->searchByEmail($searchInput);
+      } elseif (isset($_POST['logout']) && $_POST['logout'] == 'logout') {
+         session_unset();
+         header('Location: index.php');
+      }
+   } else {
+      $results = $view->showAllUsers();
+   }
 } else {
-   $results = $view->showAllUsers();
+   header('Location: index.php');
 }
 
 ?>
@@ -20,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['search'] == 'search') {
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="css/test.css">
+   <link rel="stylesheet" href="css/dashboard.css">
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
    <link rel="shortcut icon" type="image/x-icon" href="images/heroku-logo.svg"/>
@@ -73,7 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['search'] == 'search') {
    <?php endif ?>
 </div>
 
-<div class="note" style="padding-left: 1rem;">
+<div class="note">
    <p>*I shouldn't display these sensitive data, but it is just a simple registration where I am showing my ability to
       work with database</p>
 </div>
