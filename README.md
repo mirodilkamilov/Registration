@@ -11,7 +11,7 @@ My name is **Mirodil Kamilov** who currently studies at Inha University in Tashk
 **This repository is hosted in <a href="https://optimus-registration.herokuapp.com" target="_blank">this link</a>, so you can see, test right now.** These are some **features** of this website:
 
 - User can sign in/up
-- Unauthenticated user cannot visit to dashboard page
+- Unauthenticated user cannot visit to dashboard page (with a help of sessions)
 - Server-side validation
 - Live search of user data (enabled by AJAX)
 - Hashed user passwords
@@ -21,10 +21,29 @@ My name is **Mirodil Kamilov** who currently studies at Inha University in Tashk
 ### Showcase of myself
 I hope, I can convince you to following statements by this simple website. I understand:
 
-- Procedural PHP
-- Object-Oriented PHP
-- MVC pattern
-- Working with database (retrieving/inserting data, prepared statements)
-- AJAX
-- Git and GitHub
-- HTML/CSS
+<table>
+    <tbody>
+        <tr>
+            <td>Procedural PHP</td>
+            <td rowspan=7><img src="images/stack.png"></td>
+        </tr>
+        <tr>
+            <td>Object-Oriented PHP</td>
+        </tr>
+        <tr>
+            <td>MVC pattern</td>
+        </tr>
+        <tr>
+            <td>Working with database (retrieving/inserting data, prepared statements)</td>
+        </tr>
+        <tr>
+            <td>AJAX</td>
+        </tr>
+        <tr>
+            <td>Git/GitHub</td>
+        </tr>
+        <tr>
+            <td>HTML/CSS</td>
+        </tr>
+    </tbody>
+</table>
