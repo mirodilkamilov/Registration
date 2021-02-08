@@ -20,7 +20,7 @@ html {
 	overflow: hidden;
 	margin: 2rem auto 2rem auto;
 	width: 800px;
-	height: 600px;
+	height: calc(100vh - 2rem);
 	box-shadow: 0 2px 10px 1px rgba(0, 0, 0, 0.2);
 }
 .container .box {
@@ -126,7 +126,7 @@ html {
 }
 
 .form-container form .button-container {
-	margin: 1.5rem 0;
+	margin: 1rem 0;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -162,9 +162,9 @@ html {
 	border-top: 1px solid #d7d8da;
 	padding-top: 1rem;
 }
-.sign-up-container form .form-footer {
+/* .sign-up-container form .form-footer {
 	margin-top: 1.75rem;
-}
+} */
 .form-footer .footer-btn {
 	border: none;
 	background-color: inherit;
@@ -218,7 +218,7 @@ html {
 	color: red;
 	font-size: 1.1rem;
 	text-align: center;
-	padding-bottom: 1rem;
+	/* margin-bottom: 1rem; */
 }
 
 @media (max-width: 992px) {
