@@ -68,7 +68,7 @@ html {
 .form-container form h1,
 .form-container form .centered {
 	text-align: center;
-	margin-bottom: 1rem;
+	margin-bottom: 0.5rem;
 }
 .form-container form .form-paragraph {
 	color: #8492a6;
@@ -126,7 +126,7 @@ html {
 }
 
 .form-container form .button-container {
-	margin: 1rem 0;
+	margin: 0.5rem 0;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -162,9 +162,7 @@ html {
 	border-top: 1px solid #d7d8da;
 	padding-top: 1rem;
 }
-/* .sign-up-container form .form-footer {
-	margin-top: 1.75rem;
-} */
+
 .form-footer .footer-btn {
 	border: none;
 	background-color: inherit;
@@ -218,7 +216,7 @@ html {
 	color: red;
 	font-size: 1.1rem;
 	text-align: center;
-	/* margin-bottom: 1rem; */
+	margin-bottom: 0.25rem;
 }
 
 @media (max-width: 992px) {
@@ -236,6 +234,16 @@ html {
 	.container {
 		height: calc(100vh - 2rem);
 		margin: 0 auto;
+	}
+	.form-container form .button-container {
+		margin: 1.5rem 0;
+	}
+	.sign-up-container form .form-footer {
+		margin-top: 1.75rem;
+	}
+	.form-container form h1,
+	.form-container form .centered {
+		margin-bottom: 1rem;
 	}
 }
 
