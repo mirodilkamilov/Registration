@@ -25,6 +25,20 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
    <link rel="stylesheet" href="css/main.css">
    <title>Registration</title>
    <link rel="shortcut icon" type="image/x-icon" href="images/heroku-logo.svg" />
+
+   <meta name="description" content="Simple Sign In/Up page using PHP">
+   <meta name="robots" content="index, follow">
+   <meta name="google" content="nositelinkssearchbox" />
+
+   <!-- Open Graph / Facebook -->
+   <meta property="og:type" content="website">
+   <meta property="og:url" content="https://optimus-registration.herokuapp.com/">
+   <meta property="og:title" content="Registration">
+   <meta property="og:description" content="Simple Sign In/Up page using PHP">
+   <meta name="image" property="og:image" content="https://optimus-registration.herokuapp.com/images/register.jpg">
+   <meta property="og:image:alt" content="Overview of registration page" />
+   <meta name="author" content="Mirodil Kamilov">
+
 </head>
 
 <body>
