@@ -31,12 +31,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
    <meta name="google" content="nositelinkssearchbox" />
 
    <!-- Open Graph / Facebook -->
-   <meta property="og:type" content="website">
-   <meta property="og:url" content="https://optimus-registration.herokuapp.com/">
-   <meta property="og:title" content="Registration">
-   <meta property="og:description" content="Simple Sign In/Up page using PHP">
-   <meta name="image" property="og:image" content="https://optimus-registration.herokuapp.com/images/register.jpg">
-   <meta property="og:image:alt" content="Overview of registration page" />
+   <meta property='og:title' content='Registration' />
+   <meta property='og:image' content='https://optimus-registration.herokuapp.com/images/register.jpg' />
+   <meta property='og:description' content='Simple Sign In/Up page using PHP' />
+   <meta property='og:url' content='https://optimus-registration.herokuapp.com/' />
    <meta name="author" content="Mirodil Kamilov">
 
 </head>
