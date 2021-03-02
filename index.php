@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
    <!-- Open Graph / Facebook -->
    <meta property='og:title' content='Registration' />
-   <meta property='og:image' content='https://optimus-registration.herokuapp.com/images/duplicate.jpg' />
+   <meta property='og:image' content='/images/duplicate.jpg' />
    <meta property='og:description' content='Simple Sign In/Up page using PHP' />
    <meta property='og:url' content='https://optimus-registration.herokuapp.com/' />
    <meta name="author" content="Mirodil Kamilov">
